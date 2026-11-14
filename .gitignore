@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+qa/downloads/
+qa/*.png
+!qa/desktop.png
+!qa/mobile.png
+!qa/mobile-small.png
+!qa/letter-desktop.png
+!qa/letter-mobile.png

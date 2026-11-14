@@ -1,0 +1,243 @@
+{
+  "checks": [
+    {
+      "name": "Initial render, complete tree, audio opt-in",
+      "status": "pass",
+      "evidence": {
+        "ready": true,
+        "contextLost": false,
+        "points": 30523,
+        "paused": false,
+        "reducedMotion": false,
+        "palette": 0,
+        "mode": 0,
+        "rotation": 0.4735057899152226,
+        "zoom": 1,
+        "formation": 0.1601372549019607,
+        "heart": 0,
+        "burst": 8.464781164328008e-24,
+        "width": 1440,
+        "height": 900,
+        "dpr": 1,
+        "audio": {
+          "enabled": false,
+          "state": "not-created"
+        },
+        "letterOpen": false,
+        "wishOpen": false,
+        "aboutOpen": false
+      }
+    },
+    {
+      "name": "1440×900 layout",
+      "status": "pass",
+      "evidence": {
+        "width": 1440,
+        "height": 900,
+        "scrollWidth": 1440,
+        "out": []
+      }
+    },
+    {
+      "name": "WebGL error state",
+      "status": "pass",
+      "evidence": {
+        "error": 0,
+        "frames": 90,
+        "averageMs": 16.666666666666668,
+        "p95Ms": 16.800000000000182
+      }
+    },
+    {
+      "name": "Pause freezes scene",
+      "status": "pass",
+      "evidence": true
+    },
+    {
+      "name": "Keyboard orbit and zoom",
+      "status": "pass",
+      "evidence": "ArrowRight, + and − change the actual renderer state while paused."
+    },
+    {
+      "name": "Pointer drag",
+      "status": "pass",
+      "evidence": "The camera rotated after an actual pointer drag."
+    },
+    {
+      "name": "All palettes and both render modes",
+      "status": "pass",
+      "evidence": "State and aria-pressed agree with selected controls."
+    },
+    {
+      "name": "PNG download",
+      "status": "pass",
+      "evidence": {
+        "bytes": 1614833,
+        "signature": "PNG"
+      }
+    },
+    {
+      "name": "Audio opt-in and off",
+      "status": "pass",
+      "evidence": "A real button click starts AudioContext; a second click disables the score."
+    },
+    {
+      "name": "Personal letter, held heart, Escape and focus return",
+      "status": "pass",
+      "evidence": "The requested apology, thanks and wish for Si-eun’s happiness appear in a native dialog."
+    },
+    {
+      "name": "Empty, whitespace and saved wish",
+      "status": "pass",
+      "evidence": "Empty/blank input is rejected; valid text persists and changes the tree into a heart."
+    },
+    {
+      "name": "Wish persistence and deletion",
+      "status": "pass",
+      "evidence": "Reload restores the wish; the visible delete button removes the storage key."
+    },
+    {
+      "name": "Growth and burst recovery",
+      "status": "pass",
+      "evidence": "The tree grows again, bursts, and returns to its original structure."
+    },
+    {
+      "name": "390×844 layout",
+      "status": "pass",
+      "evidence": {
+        "width": 390,
+        "height": 844,
+        "scrollWidth": 390,
+        "out": []
+      }
+    },
+    {
+      "name": "Two-finger pinch",
+      "status": "pass",
+      "evidence": "Real CDP touch events zoom the mobile tree."
+    },
+    {
+      "name": "360×740 layout",
+      "status": "pass",
+      "evidence": {
+        "width": 360,
+        "height": 740,
+        "scrollWidth": 360,
+        "out": []
+      }
+    },
+    {
+      "name": "1920×1080 layout",
+      "status": "pass",
+      "evidence": {
+        "width": 1920,
+        "height": 1080,
+        "scrollWidth": 1920,
+        "out": []
+      }
+    },
+    {
+      "name": "844×390 layout",
+      "status": "pass",
+      "evidence": {
+        "width": 844,
+        "height": 390,
+        "scrollWidth": 844,
+        "out": []
+      }
+    },
+    {
+      "name": "Reduced motion",
+      "status": "pass",
+      "evidence": "Initial tree stays static; the explicit letter action shows a static heart without a transition."
+    },
+    {
+      "name": "Storage unavailable and literal input",
+      "status": "pass",
+      "evidence": "Denied storage gives honest feedback; HTML-like wish text never becomes markup."
+    },
+    {
+      "name": "WebGL context loss and restoration",
+      "status": "pass",
+      "evidence": "The recovery notice appears on loss; GPU resources are recreated and the notice clears."
+    },
+    {
+      "name": "WebGL unavailable",
+      "status": "pass",
+      "evidence": "A clear recovery panel and retry button replace the loading indicator."
+    },
+    {
+      "name": "No uncaught errors or external requests",
+      "status": "pass",
+      "evidence": "All fonts, scripts and styles are served locally."
+    }
+  ],
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/scene.js",
+    "http://127.0.0.1:4173/app.js",
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.94' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.8' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+    "http://127.0.0.1:4173/assets/cormorant-latin.woff2",
+    "http://127.0.0.1:4173/assets/cormorant-italic-latin.woff2",
+    "http://127.0.0.1:4173/assets/favicon.svg",
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/scene.js",
+    "http://127.0.0.1:4173/app.js",
+    "http://127.0.0.1:4173/assets/cormorant-latin.woff2",
+    "http://127.0.0.1:4173/assets/cormorant-italic-latin.woff2",
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.94' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.8' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/scene.js",
+    "http://127.0.0.1:4173/app.js",
+    "http://127.0.0.1:4173/assets/cormorant-latin.woff2",
+    "http://127.0.0.1:4173/assets/cormorant-italic-latin.woff2",
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.94' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.8' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+    "http://127.0.0.1:4173/assets/favicon.svg",
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/scene.js",
+    "http://127.0.0.1:4173/app.js",
+    "http://127.0.0.1:4173/assets/cormorant-latin.woff2",
+    "http://127.0.0.1:4173/assets/cormorant-italic-latin.woff2",
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.94' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.8' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+    "http://127.0.0.1:4173/assets/favicon.svg",
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/scene.js",
+    "http://127.0.0.1:4173/app.js",
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.94' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.8' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+    "http://127.0.0.1:4173/assets/cormorant-latin.woff2",
+    "http://127.0.0.1:4173/assets/cormorant-italic-latin.woff2",
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/scene.js",
+    "http://127.0.0.1:4173/app.js",
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.94' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.8' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+    "http://127.0.0.1:4173/assets/cormorant-latin.woff2",
+    "http://127.0.0.1:4173/assets/cormorant-italic-latin.woff2",
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/scene.js",
+    "http://127.0.0.1:4173/app.js",
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.94' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.8' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+    "http://127.0.0.1:4173/assets/cormorant-latin.woff2",
+    "http://127.0.0.1:4173/assets/cormorant-italic-latin.woff2",
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/scene.js",
+    "http://127.0.0.1:4173/app.js",
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.94' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.8' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+    "http://127.0.0.1:4173/assets/cormorant-latin.woff2",
+    "http://127.0.0.1:4173/assets/cormorant-italic-latin.woff2"
+  ],
+  "performance": {
+    "frames": 90,
+    "averageMs": 16.666666666666668,
+    "p95Ms": 16.800000000000182
+  },
+  "status": "pass"
+}

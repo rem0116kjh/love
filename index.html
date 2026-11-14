@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070d0b">
+  <meta name="description" content="사랑하는 시은이에게. 작은 빛과 문자, 그리고 진심을 담은 우리만의 겨울, NOËL.">
+  <title>NOËL — 사랑하는 시은이에게</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./scene.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3L12 2Z"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-muted" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m16 9 6 6m0-6-6 6"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 15v6h16v-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8V4Z"/></symbol>
+    <symbol id="i-replay" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 7M3 4v6h6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-mouse" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="6"/><path d="M12 6v4"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+  </svg>
+
+  <main class="experience" id="experience">
+    <div class="ambient" aria-hidden="true"></div>
+    <canvas id="winter-canvas" tabindex="0" role="img" aria-label="문자와 빛으로 만든 입체 크리스마스트리. 드래그 또는 방향키로 회전하고, 스페이스 키로 멈출 수 있습니다."></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="edge-frame" aria-hidden="true"></div>
+
+    <header class="masthead">
+      <a class="wordmark" href="" aria-label="NOËL 처음으로">NOËL<span class="wordmark-star">✳</span></a>
+      <div class="masthead-caption"><span class="tiny-star">✦</span> A LITTLE WINTER WONDER <span class="tiny-star">✦</span></div>
+      <div class="header-actions">
+        <button class="sound-button" id="sound-button" type="button" aria-label="겨울 음악 켜기" aria-pressed="false" title="겨울 음악 켜기 (M)">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="sound-label">SOUND OFF</span>
+        </button>
+        <span class="action-divider"></span>
+        <button class="icon-button" id="fullscreen-button" type="button" aria-label="전체 화면" title="전체 화면 (F)"><svg><use href="#i-expand"/></svg></button>
+      </div>
+    </header>
+
+    <section class="intro" aria-labelledby="artwork-title">
+      <p class="eyebrow"><span class="short-line"></span> FOR SI-EUN, WITH ALL MY HEART</p>
+      <h1 id="artwork-title">For you,<br>my dearest<br> <em>Si-eun.</em></h1>
+      <p class="intro-copy">서툰 마음 끝에, 꼭 전하고 싶은 말.<br>사랑하는 시은이에게.</p>
+      <button class="wish-trigger" id="letter-button" type="button"><span>시은이에게, 내 진심을</span><span class="wish-arrow"><svg><use href="#i-arrow"/></svg></span></button>
+      <div class="intro-bottom"><span class="fine-star">✧</span><span>OF ALL THE LITTLE WONDERS,<br>YOU ARE MY FAVORITE.</span></div>
+    </section>
+
+    <div class="scene-side-label" aria-hidden="true"><span>EST. IN A MOMENT OF WONDER</span><span class="short-line"></span><span>WINTER, 2026</span></div>
+    <div class="scene-caption" id="scene-caption"><span class="caption-star">✧</span><span id="scene-caption-text">Every little light holds a wish.</span><span class="caption-star">✧</span></div>
+    <div class="gesture-hint" id="gesture-hint"><svg><use href="#i-mouse"/></svg><span>드래그하여 회전 <span class="hint-dot">·</span> 스크롤하여 가까이</span></div>
+
+    <div class="workbench" aria-label="작품 조절">
+      <div class="palette-control" role="group" aria-label="트리 색상">
+        <button class="palette selected" data-palette="0" type="button" aria-label="에버그린 색상" aria-pressed="true" title="Evergreen"><span class="swatch evergreen"></span></button>
+        <button class="palette" data-palette="1" type="button" aria-label="샴페인 색상" aria-pressed="false" title="Champagne"><span class="swatch champagne"></span></button>
+        <button class="palette" data-palette="2" type="button" aria-label="오로라 색상" aria-pressed="false" title="Aurora"><span class="swatch aurora"></span></button>
+        <span class="palette-label" id="palette-label">Evergreen</span>
+      </div>
+      <span class="control-divider"></span>
+      <div class="render-modes" role="group" aria-label="표현 방식">
+        <button class="mode-button active" data-mode="0" type="button" aria-pressed="true"><span class="ascii-icon" aria-hidden="true">Aa</span> 문자</button>
+        <button class="mode-button" data-mode="1" type="button" aria-pressed="false"><svg><use href="#i-spark"/></svg> 별빛</button>
+      </div>
+      <span class="control-divider"></span>
+      <div class="playback-controls">
+        <button class="icon-button" id="pause-button" type="button" aria-label="움직임 멈추기" aria-pressed="false" title="움직임 멈추기 (Space)"><svg><use href="#i-pause"/></svg></button>
+        <button class="icon-button" id="replay-button" type="button" aria-label="트리 다시 피우기" title="트리 다시 피우기 (R)"><svg><use href="#i-replay"/></svg></button>
+        <button class="icon-button" id="burst-button" type="button" aria-label="별빛 흩뿌리기" title="별빛 흩뿌리기 (B)"><svg><use href="#i-spark"/></svg></button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-left"><span class="live-dot"></span><span>FOR SI-EUN, WITH LOVE</span></div>
+      <span class="footer-center">Made of characters. Meant to be felt.</span>
+      <div class="footer-actions"><button id="about-button" class="text-button" type="button">작품 이야기</button><span>·</span><button id="save-button" class="text-button" type="button">순간 저장 <svg><use href="#i-download"/></svg></button></div>
+    </footer>
+
+    <div class="loading" id="loading" role="status"><span class="loading-star">✧</span><span>조금씩, 겨울이 피어나는 중</span></div>
+    <div class="fallback" id="fallback" hidden><span>✧</span><h2>빛을 켤 수 없어요.</h2><p>브라우저의 하드웨어 가속을 켜거나<br>다른 브라우저에서 이 겨울을 열어 주세요.</p><button type="button" id="retry-button">다시 시도</button></div>
+    <div class="wish-floating" id="wish-floating" aria-hidden="true"><span class="floating-star">✧</span><p></p><span class="floating-subtitle">MAY YOUR WISH FIND ITS WAY.</span></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="sr-only" id="scene-announcement" aria-live="polite"></div>
+    <noscript><div class="noscript-message">이 작품을 감상하려면 브라우저에서 JavaScript를 켜 주세요.</div></noscript>
+  </main>
+
+  <dialog class="letter-dialog" id="letter-dialog" aria-labelledby="letter-title">
+    <button class="dialog-close icon-button" type="button" data-close="letter-dialog" aria-label="편지 닫기"><svg><use href="#i-close"/></svg></button>
+    <div class="letter-mark" aria-hidden="true">♡</div>
+    <p class="eyebrow">TO MY DEAREST SI-EUN</p>
+    <h2 id="letter-title">사랑하는 <em>시은이에게.</em></h2>
+    <div class="letter-body">
+      <p>내가 너무 이기적으로 대하고,<br>매번 너에게 상처를 주는 것 같아서 미안해.</p>
+      <p>그런데도 나랑 사귀어 주고,<br>내 곁에 있어 줘서 정말 고마워.</p>
+      <p class="letter-promise">진짜 너를<br><span>행복하게 해 주고 싶어.</span></p>
+      <p>이 작은 빛들에 내 진심을 담아서,<br>많이 사랑해, 시은아.</p>
+    </div>
+    <div class="letter-signature"><span>언제나, 너를 생각하는 내가.</span><svg aria-hidden="true"><use href="#i-heart"/></svg></div>
+    <button class="letter-wish-button" id="wish-button" type="button">우리의 소원도 하나 남겨 볼까? <svg><use href="#i-spark"/></svg></button>
+  </dialog>
+
+  <dialog class="wish-dialog" id="wish-dialog" aria-labelledby="wish-title">
+    <button class="dialog-close icon-button" type="button" data-close="wish-dialog" aria-label="소원 창 닫기"><svg><use href="#i-close"/></svg></button>
+    <div class="dialog-ornament" aria-hidden="true">✧</div>
+    <p class="eyebrow">A WISH, A LITTLE LIGHT</p>
+    <h2 id="wish-title">당신의 겨울에,<br><em>작은 소원 하나.</em></h2>
+    <p class="dialog-description">말하지 못했던 마음도 괜찮아요.<br>당신의 소원을 빛으로 피워 드릴게요.</p>
+    <form id="wish-form">
+      <label class="sr-only" for="wish-input">소원 내용</label>
+      <textarea id="wish-input" name="wish" placeholder="이번 겨울, 내가 바라는 건…" maxlength="80" rows="3" required></textarea>
+      <div class="input-meta"><span>이 브라우저에만 조용히 간직해요.</span><span><span id="wish-count">0</span> / 80</span></div>
+      <button class="submit-wish" type="submit">별에 마음 전하기 <svg><use href="#i-spark"/></svg></button>
+    </form>
+    <button class="forget-wish text-button" id="forget-wish" type="button" hidden>간직한 소원 지우기</button>
+  </dialog>
+
+  <dialog class="about-dialog" id="about-dialog" aria-labelledby="about-title">
+    <button class="dialog-close icon-button" type="button" data-close="about-dialog" aria-label="작품 이야기 닫기"><svg><use href="#i-close"/></svg></button>
+    <p class="eyebrow">BEHIND THE WONDER</p>
+    <h2 id="about-title">A winter,<br><em>written in light.</em></h2>
+    <p>점 하나, 문자 하나가 모여 숲의 모양을 닮아 갑니다. NOËL은 차가운 코드로 따뜻한 순간을 만드는 작은 인터랙티브 작품입니다.</p>
+    <p><a href="https://www.instagram.com/p/DfoWsojSWA2/" target="_blank" rel="noopener noreferrer">@dwcminh.ascii의 ASCII Christmas Tree <svg><use href="#i-arrow"/></svg></a>에서 영감을 받아, 실시간으로 피어나는 새로운 겨울을 만들었습니다.</p>
+    <dl class="shortcut-list"><div><dt>드래그 / ← →</dt><dd>나무 돌려 보기</dd></div><div><dt>스크롤 / + −</dt><dd>가까이 다가가기</dd></div><div><dt>SPACE</dt><dd>시간 멈추기</dd></div><div><dt>R / B</dt><dd>다시 피우기 / 빛 흩뿌리기</dd></div><div><dt>M / F</dt><dd>음악 / 전체 화면</dd></div></dl>
+    <p class="about-note">이어폰과 함께, 조금 천천히 감상해 보세요.<br>음악은 이곳에서 실시간으로 연주됩니다.</p>
+  </dialog>
+</body>
+</html>

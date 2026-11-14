@@ -1,0 +1,12 @@
+# NOËL — design contract
+
+- Surface: a full-screen, single-scene winter artwork built with HTML, CSS and JavaScript, with no runtime dependencies or remote assets.
+- Primary action: open a personal letter for Si-eun, holding the tree in a heart shape while it is read; explore by pointer/keyboard and leave a private wish.
+- Reference observed in-browser: https://www.instagram.com/p/DfoWsojSWA2/ by @dwcminh.ascii. At 3 seconds, a green tree grows from an ASCII ground; at 9 seconds it has a gold spiral and red ornaments; at 17 seconds a star, presents and a Christmas greeting complete it. Snow and the tree rotate with depth. The new work reimplements the scene from procedural geometry, without copying code or video/audio assets.
+- Direction: dark evergreen, champagne gold, warm red, restrained editorial serif typography, quiet gallery framing. The artwork, not a marketing landing page, fills the first viewport.
+- Hierarchy: living tree → dedication to Si-eun → personal letter → palettes/modes/playback → supporting actions. The letter contains the user-requested apology for selfishness and hurt, gratitude for staying together, and a wish to make Si-eun happy.
+- Viewports: 1440x900, 390x844, 360x740. Also check landscape and large desktop layouts.
+- Accessibility: native buttons and dialogs, visible keyboard focus, named canvas, descriptive actions, keyboard shortcuts, reduced-motion default pause, clear labels and live feedback. All primary actions remain available without dragging.
+- Loading: small stable progress indicator; dismiss after first render. Empty: empty wish input has a prompt and required validation. Error: WebGL failure/restoration and audio/export failures have recovery feedback. Partial: storage denied leaves the artwork and wish effect functional, with notice. Success: wish confirmation and export feedback. Permission: no account, network, camera, or microphone access; browser-native fullscreen/download behavior only.
+- Performance: GPU point sprites with a local glyph atlas, downsampled bloom, bounded device pixel ratio, frame-time based animation and tab-visibility suspension.
+- Local persistence: only the latest wish, with a visible delete action. No analytics or external data transmission.

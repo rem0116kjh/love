@@ -1,0 +1,110 @@
+[
+  {
+    "viewport": "390x844",
+    "state": {
+      "ready": true,
+      "contextLost": false,
+      "points": 30523,
+      "paused": false,
+      "reducedMotion": false,
+      "palette": 0,
+      "mode": 0,
+      "rotation": 0.9459633640387921,
+      "zoom": 1,
+      "formation": 1,
+      "heart": 0,
+      "burst": 8.464781164328008e-24,
+      "width": 390,
+      "height": 844,
+      "dpr": 1,
+      "audio": {
+        "enabled": false,
+        "state": "not-created"
+      },
+      "letterOpen": false,
+      "wishOpen": false,
+      "aboutOpen": false
+    }
+  },
+  {
+    "viewport": "360x740",
+    "state": {
+      "ready": true,
+      "contextLost": false,
+      "points": 30523,
+      "paused": false,
+      "reducedMotion": false,
+      "palette": 0,
+      "mode": 0,
+      "rotation": 0.9407129094491882,
+      "zoom": 1,
+      "formation": 1,
+      "heart": 0,
+      "burst": 8.464781164328008e-24,
+      "width": 360,
+      "height": 740,
+      "dpr": 1,
+      "audio": {
+        "enabled": false,
+        "state": "not-created"
+      },
+      "letterOpen": false,
+      "wishOpen": false,
+      "aboutOpen": false
+    }
+  },
+  {
+    "viewport": "1920x1080",
+    "state": {
+      "ready": true,
+      "contextLost": false,
+      "points": 30523,
+      "paused": false,
+      "reducedMotion": false,
+      "palette": 0,
+      "mode": 0,
+      "rotation": 1.0107058370772288,
+      "zoom": 1,
+      "formation": 1,
+      "heart": 0,
+      "burst": 8.464781164328008e-24,
+      "width": 1920,
+      "height": 1080,
+      "dpr": 1,
+      "audio": {
+        "enabled": false,
+        "state": "not-created"
+      },
+      "letterOpen": false,
+      "wishOpen": false,
+      "aboutOpen": false
+    }
+  },
+  {
+    "viewport": "844x390",
+    "state": {
+      "ready": true,
+      "contextLost": false,
+      "points": 30523,
+      "paused": false,
+      "reducedMotion": false,
+      "palette": 0,
+      "mode": 0,
+      "rotation": 0.944735569215883,
+      "zoom": 1,
+      "formation": 1,
+      "heart": 0,
+      "burst": 8.464781164328008e-24,
+      "width": 844,
+      "height": 580,
+      "dpr": 1,
+      "audio": {
+        "enabled": false,
+        "state": "not-created"
+      },
+      "letterOpen": false,
+      "wishOpen": false,
+      "aboutOpen": false
+    }
+  }
+]
