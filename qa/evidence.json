@@ -1,28 +1,82 @@
 {
   "contract": "design-contract.md — NOËL, a real-time winter artwork and personal letter for Si-eun.",
-  "targetViewports": ["1440x900", "390x844", "360x740"],
+  "targetViewports": [
+    "1440x900",
+    "390x844",
+    "360x740",
+    "375x667",
+    "852x393"
+  ],
   "accessibility": {
     "status": "pass",
-    "evidence": "Inspected visible focus and readable foreground colors in rendered desktop/mobile views. Native dialogs have headings, labels, Escape dismissal and verified focus return. Actual keyboard events orbit/zoom the tree; buttons expose selected/paused state. Reduced-motion emulation starts a complete, stationary tree and shows a static heart for the explicit letter action. Mobile control height is 44px. This is targeted browser review, not a full WCAG certification."
+    "evidence": "Inspected visible focus and readable foreground colors in rendered desktop/mobile views. Native dialogs have headings, labels, Escape dismissal and verified focus return. Actual keyboard events orbit/zoom the tree; buttons expose selected/paused state. Reduced-motion emulation starts a complete, stationary tree and shows a static heart for the explicit letter action. Mobile control height is 44px. This is targeted browser review, not a full WCAG certification. Mobile letter body increased from 11px to 15px. The close button remains 44px and visible while the independently focusable paper scrolls. A 44px read-more button appears only while content remains below."
   },
   "responsive": {
     "status": "pass",
-    "evidence": "Captured and visually reviewed 1440x900, 390x844 and 360x740 final scenes. Corrected initial title/star and caption/present overlaps. Also inspected 1920x1080 and a scrollable 844x390 landscape layout. No horizontal overflow; controls remain in bounds. Actual two-finger CDP events changed the scene zoom."
+    "evidence": "Captured and visually reviewed 1440x900, 390x844 and 360x740 final scenes. Corrected initial title/star and caption/present overlaps. Also inspected 1920x1080 and a scrollable 844x390 landscape layout. No horizontal overflow; controls remain in bounds. Actual two-finger CDP events changed the scene zoom. Follow-up mobile check covers 320x568, 360x640, 375x667, 390x844, 412x915, 430x932 and 852x393. Verified actual illuminated WebGL pixels in a distinct stage, touch scrolling, orientation changes while open, close/reopen and handoff to the wish dialog. The paused/reduced-motion frame survives redundant resize notifications."
   },
   "contentStates": {
-    "loading": {"status":"pass","evidence":"A stable loading marker appears during renderer setup, then becomes hidden to assistive technology and fades after the first real frame. The tree completes its growth and remains interactive."},
-    "empty": {"status":"pass","evidence":"The wish field has a prompt. Browser integration checks reject both empty and whitespace-only submissions without closing the dialog."},
-    "error": {"status":"pass","evidence":"Tested unavailable WebGL and forced WebGL context loss. A recovery panel replaces the loading state; restoring the context recreates GPU resources and clears the panel."},
-    "partial": {"status":"pass","evidence":"Blocked localStorage writes in an isolated browser test. The wish effect still works, with a visible message explaining it cannot persist. HTML-like input remains literal text."},
-    "success": {"status":"pass","evidence":"Verified personal letter, held heart, wish persistence after reload and deletion, all palettes/modes, audio on/off, growth/burst recovery and an actual PNG download with a valid file signature."},
-    "permission": {"status":"not-applicable","reason":"The artwork uses no account login, camera, microphone or permission-gated external service. Audio is explicitly activated by a button, and all assets are local. Browser-native fullscreen/download availability is handled with feedback."}
+    "loading": {
+      "status": "pass",
+      "evidence": "A stable loading marker appears during renderer setup, then becomes hidden to assistive technology and fades after the first real frame. The tree completes its growth and remains interactive."
+    },
+    "empty": {
+      "status": "pass",
+      "evidence": "The wish field has a prompt. Browser integration checks reject both empty and whitespace-only submissions without closing the dialog."
+    },
+    "error": {
+      "status": "pass",
+      "evidence": "Tested unavailable WebGL and forced WebGL context loss. A recovery panel replaces the loading state; restoring the context recreates GPU resources and clears the panel."
+    },
+    "partial": {
+      "status": "pass",
+      "evidence": "Blocked localStorage writes in an isolated browser test. The wish effect still works, with a visible message explaining it cannot persist. HTML-like input remains literal text."
+    },
+    "success": {
+      "status": "pass",
+      "evidence": "Verified personal letter, held heart, wish persistence after reload and deletion, all palettes/modes, audio on/off, growth/burst recovery and an actual PNG download with a valid file signature."
+    },
+    "permission": {
+      "status": "not-applicable",
+      "reason": "The artwork uses no account login, camera, microphone or permission-gated external service. Audio is explicitly activated by a button, and all assets are local. Browser-native fullscreen/download availability is handled with feedback."
+    }
   },
   "renderedEvidence": [
-    {"viewport":"1440x900","artifact":"desktop.png","observation":"Personal dedication to Si-eun and a complete ASCII tree with gold garland, ornaments, star, presents and visible controls."},
-    {"viewport":"390x844","artifact":"mobile.png","observation":"Mobile dedication, tree and action controls fit without overlap; touch hint is appropriate for the viewport."},
-    {"viewport":"360x740","artifact":"mobile-small.png","observation":"Short mobile view uses a smaller tree to separate gifts from the caption and keeps all primary controls visible."},
-    {"viewport":"1440x900","artifact":"letter-desktop.png","observation":"The requested personal letter appears beside the particle heart; the dialog has a visible close button and a path to leave a wish."},
-    {"viewport":"390x844","artifact":"letter-mobile.png","observation":"The complete letter is readable inside the mobile viewport, including the apology, thanks and highlighted wish for Si-eun’s happiness."}
+    {
+      "viewport": "1440x900",
+      "artifact": "desktop.png",
+      "observation": "Personal dedication to Si-eun and a complete ASCII tree with gold garland, ornaments, star, presents and visible controls."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "mobile.png",
+      "observation": "Mobile dedication, tree and action controls fit without overlap; touch hint is appropriate for the viewport."
+    },
+    {
+      "viewport": "360x740",
+      "artifact": "mobile-small.png",
+      "observation": "Short mobile view uses a smaller tree to separate gifts from the caption and keeps all primary controls visible."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "letter-desktop.png",
+      "observation": "The requested personal letter appears beside the particle heart; the dialog has a visible close button and a path to leave a wish."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "letter-mobile.png",
+      "observation": "Actual WebGL particle heart sits visibly above the 15px personal letter. Both remain readable; only the paper scrolls if needed. Close control stays visible."
+    },
+    {
+      "viewport": "375x667",
+      "artifact": "letter-mobile-small.png",
+      "observation": "Short mobile viewport: real heart stays above the scrollable letter, with a read-more cue and a fixed close control."
+    },
+    {
+      "viewport": "852x393",
+      "artifact": "letter-landscape.png",
+      "observation": "Landscape phone viewport: the visible particle heart and scrollable letter are side by side without overlap."
+    }
   ],
   "limits": "Chromium browser emulation on macOS; physical iPhone/Android and Safari were not tested. Performance measurement is local, not a cross-device guarantee."
 }

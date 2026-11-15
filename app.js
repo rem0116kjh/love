@@ -214,6 +214,32 @@
     dialog.returnFocus = trigger;
     dialog.showModal();
   }
+  const compactLetter = window.matchMedia('(max-width: 760px), (max-width: 1000px) and (max-height: 500px)');
+  const treeDescription = canvas.getAttribute('aria-label');
+  function updateLetterScrollCue() {
+    const paper = $('letter-paper');
+    $('letter-more-button').hidden = !($('letter-dialog').open && compactLetter.matches && paper.scrollHeight - paper.scrollTop - paper.clientHeight > 28);
+  }
+  function syncLetterPresentation() {
+    const compact = $('letter-dialog').open && compactLetter.matches;
+    const destination = compact ? $('letter-visual') : root;
+    if (canvas.parentElement !== destination) {
+      destination.insertBefore(canvas, compact ? destination.firstChild : root.querySelector('.grain'));
+      canvas.tabIndex = compact ? -1 : 0;
+      canvas.setAttribute('aria-label', compact ? '시은이를 향한 마음을 담은, 빛나는 입자 하트' : treeDescription);
+      scene?.setLetterPresentation(compact);
+    }
+    requestAnimationFrame(updateLetterScrollCue);
+  }
+  compactLetter.addEventListener('change', syncLetterPresentation);
+  const letterResizeObserver = new ResizeObserver(updateLetterScrollCue);
+  letterResizeObserver.observe($('letter-paper'));
+  $('letter-paper').addEventListener('scroll', updateLetterScrollCue, { passive: true });
+  $('letter-more-button').addEventListener('click', () => {
+    $('letter-paper').focus({ preventScroll: true });
+    $('letter-paper').scrollBy({ top: $('letter-paper').clientHeight * 0.65, behavior: motionPreference.matches ? 'instant' : 'smooth' });
+  });
+  document.fonts.ready.then(updateLetterScrollCue);
   document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => $(button.dataset.close).close()));
   document.querySelectorAll('dialog').forEach(dialog => {
     dialog.addEventListener('click', event => {
@@ -229,10 +255,13 @@
     scene?.love(); audio?.chime();
     root.classList.add('letter-active');
     openDialog('letter-dialog', $('letter-button'));
+    $('letter-paper').scrollTop = 0;
+    syncLetterPresentation();
   });
   $('letter-dialog').addEventListener('close', () => {
     root.classList.remove('letter-active');
     scene?.endLove();
+    syncLetterPresentation();
   });
   $('wish-button').addEventListener('click', () => {
     $('letter-dialog').close();
@@ -346,6 +375,7 @@
   window.addEventListener('pagehide', event => {
     if (event.persisted) return;
     scene?.destroy(); audio?.destroy(); wishTimers.forEach(clearTimeout); clearTimeout(toastTimer);
+    letterResizeObserver.disconnect();
   });
   // Small read-only diagnostics for verifying real renderer and audio state.
   Object.defineProperty(window, 'noel', { value: Object.freeze({

@@ -29,6 +29,36 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
 @media(max-height:500px) and (orientation:landscape){body{overflow:auto}.experience{min-height:580px}.intro{top:110px}.masthead{top:22px}.intro h1{font-size:48px}.intro-copy{font-size:10px}.intro-bottom{display:none}.workbench{bottom:66px}.gesture-hint{bottom:130px}.scene-caption{top:73%}}
 .letter-dialog{width:428px;margin:auto auto auto 8%;padding:32px 37px 27px;background:linear-gradient(145deg,#1a241bee,#111a13f5);border-color:#c0ab7740;box-shadow:0 25px 100px #0005}.letter-dialog::backdrop{background:rgba(3,9,6,.27);backdrop-filter:blur(1px);-webkit-backdrop-filter:blur(1px)}.letter-mark{font-family:var(--serif);font-size:45px;color:var(--gold);line-height:1;margin-bottom:22px}.letter-dialog .eyebrow{font-size:8px;letter-spacing:.18em}.letter-dialog h2{font-family:var(--sans);font-size:23px;font-weight:300;line-height:1.5;letter-spacing:-.06em;margin:19px 0 23px}.letter-dialog h2 em{font-style:normal;color:var(--gold)}.letter-body p{font-size:12px;line-height:2.05;color:#c2c7b8;margin:0 0 20px;word-break:keep-all}.letter-body .letter-promise{font-size:22px;font-weight:300;line-height:1.7;letter-spacing:-.045em;color:#e4ddc9;margin:25px 0}.letter-promise span{color:var(--gold)}.letter-signature{border-top:1px solid #c0b38e26;padding-top:21px;margin-top:25px;display:flex;align-items:center;justify-content:space-between;font-size:10px;color:#b2b9a4}.letter-signature svg{width:17px;height:17px;color:var(--gold)}.letter-wish-button{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:44px;margin-top:18px;font-size:10px;color:#aeb79e}.letter-wish-button svg{width:14px;height:14px;color:var(--gold)}.letter-wish-button:hover{color:var(--gold)}.letter-active .intro,.letter-active .scene-caption,.letter-active .gesture-hint{opacity:0;pointer-events:none}.letter-active .intro *{pointer-events:none}
 @media(max-width:760px){.wish-floating{top:39%;max-width:65%}.wish-floating p{font-size:14px;margin:12px 0;line-height:1.75}.floating-subtitle{font-size:6px}.palette,.playback-controls .icon-button,.mode-button{min-height:44px}.letter-dialog{margin:auto;padding:29px 29px 20px;max-width:calc(100vw - 38px);width:370px}.letter-dialog::backdrop{background:rgba(3,9,6,.55);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}.letter-mark{font-size:39px;margin-bottom:18px}.letter-dialog h2{font-size:22px;margin:16px 0 20px}.letter-body p{font-size:11px;margin-bottom:17px}.letter-body .letter-promise{font-size:22px;margin:22px 0}.letter-signature{margin-top:20px;padding-top:17px;font-size:9px}.letter-wish-button{font-size:9px;margin-top:12px}}
+.letter-visual,.letter-scroll-cue{display:none}
+.letter-paper:focus-visible{outline:1px solid var(--gold);outline-offset:-5px}
+@media(max-width:760px),(max-width:1000px) and (max-height:500px){
+  .letter-dialog[open]{display:flex;flex-direction:column;gap:10px;width:calc(100vw - 28px);max-width:430px;height:calc(100vh - 24px);height:calc(100dvh - max(12px,env(safe-area-inset-top)) - max(12px,env(safe-area-inset-bottom)));max-height:calc(100dvh - max(12px,env(safe-area-inset-top)) - max(12px,env(safe-area-inset-bottom)));margin:max(12px,env(safe-area-inset-top)) auto max(12px,env(safe-area-inset-bottom));padding:0;border:0;background:none;box-shadow:none;overflow:visible}
+  .letter-dialog::backdrop{background:rgba(3,9,6,.64);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+  .letter-dialog .dialog-close{z-index:3;top:2px;right:1px;width:44px;height:44px;color:#dfd7bd;background:#101b1399}
+  .letter-visual{display:block;position:relative;flex:0 0 clamp(154px,22dvh,206px);min-height:0;isolation:isolate}
+  .letter-visual #winter-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mask-image:linear-gradient(transparent,#000 12%,#000 78%,transparent 96%);-webkit-mask-image:linear-gradient(transparent,#000 12%,#000 78%,transparent 96%)}
+  .letter-visual-caption{position:absolute;z-index:1;bottom:0;left:0;right:0;text-align:center;color:#c8b58c;font-size:8px;letter-spacing:.22em;pointer-events:none}
+  .letter-paper{flex:1;min-height:0;overflow-y:auto;overscroll-behavior-y:contain;touch-action:pan-y pinch-zoom;padding:25px 25px 17px;border:1px solid #c0ab7745;border-radius:5px;background:linear-gradient(145deg,#19241af5,#111b14fa);box-shadow:0 15px 50px #0004;scrollbar-width:thin;scrollbar-color:#8c805b #132017;scroll-padding:18px;-webkit-overflow-scrolling:touch}
+  .letter-paper .letter-mark{display:none}
+  .letter-paper .eyebrow{font-size:9px;letter-spacing:.16em}
+  .letter-paper h2{font-size:25px;line-height:1.5;letter-spacing:-.045em;margin:13px 0 24px}
+  .letter-paper .letter-body p{font-size:15px;line-height:1.9;color:#d3d7c8;margin:0 0 19px}
+  .letter-paper .letter-body .letter-promise{font-size:25px;line-height:1.65;margin:23px 0;letter-spacing:-.045em}
+  .letter-paper .letter-signature{font-size:11px;line-height:1.7;padding-top:19px;margin-top:23px}
+  .letter-paper .letter-wish-button{min-height:48px;font-size:12px;line-height:1.6;margin-top:14px;color:#c3c9b2}
+  .letter-scroll-cue{position:absolute;z-index:4;right:14px;bottom:10px;display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 15px;border:1px solid #c8b78450;border-radius:24px;background:#1b281df5;box-shadow:0 3px 20px #0005;color:#dfd0ae;font-size:11px;letter-spacing:.015em}
+  .letter-scroll-cue span{font-size:16px}
+  .letter-active .masthead,.letter-active .workbench,.letter-active .footer,.letter-active .scene-side-label,.letter-active .edge-frame{visibility:hidden;pointer-events:none}
+  .wish-dialog textarea{font-size:16px}
+}
+@media(max-width:1000px) and (max-height:500px) and (orientation:landscape){
+  .letter-dialog[open]{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);max-width:900px;gap:18px}
+  .letter-visual{align-self:stretch;min-width:0;height:100%}
+  .letter-visual-caption{bottom:13px}
+  .letter-paper{height:100%;padding:24px 28px 17px}
+  .letter-dialog .dialog-close{top:5px;right:6px}
+  .letter-paper .eyebrow{padding-right:24px}
+}
 @media(max-height:500px) and (orientation:landscape){.scene-caption{display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.is-ready .scene-caption{opacity:1}.wish-active .scene-caption{opacity:0}.letter-active .scene-caption{opacity:0}}
 
@@ -116,6 +146,10 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
 
   <dialog class="letter-dialog" id="letter-dialog" aria-labelledby="letter-title">
     <button class="dialog-close icon-button" type="button" data-close="letter-dialog" aria-label="편지 닫기"><svg><use href="#i-close"/></svg></button>
+    <div class="letter-visual" id="letter-visual">
+      <span class="letter-visual-caption" aria-hidden="true">ALL MY HEART, JUST FOR YOU.</span>
+    </div>
+    <div class="letter-paper" id="letter-paper" tabindex="0" role="region" aria-label="시은이에게 보내는 편지 내용">
     <div class="letter-mark" aria-hidden="true">♡</div>
     <p class="eyebrow">TO MY DEAREST SI-EUN</p>
     <h2 id="letter-title">사랑하는 <em>시은이에게.</em></h2>
@@ -127,6 +161,8 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
     </div>
     <div class="letter-signature"><span>언제나, 너를 생각하는 내가.</span><svg aria-hidden="true"><use href="#i-heart"/></svg></div>
     <button class="letter-wish-button" id="wish-button" type="button">우리의 소원도 하나 남겨 볼까? <svg><use href="#i-spark"/></svg></button>
+    </div>
+    <button class="letter-scroll-cue" id="letter-more-button" type="button" aria-label="편지 아래 내용으로 이동" hidden>이어서 읽기 <span aria-hidden="true">↓</span></button>
   </dialog>
 
   <dialog class="wish-dialog" id="wish-dialog" aria-labelledby="wish-title">
@@ -315,7 +351,7 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
     attribute vec3 aPosition;
     attribute vec3 aColor;
     attribute vec4 aInfo;
-    uniform float uTime, uRotation, uPitch, uZoom, uDpr, uFormation, uBurst, uHeart, uPalette;
+    uniform float uTime, uRotation, uPitch, uZoom, uDpr, uPointScale, uFormation, uBurst, uHeart, uPalette;
     uniform mediump float uMode;
     uniform vec2 uResolution, uCenter;
     varying vec3 vColor;
@@ -360,7 +396,7 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
       float perspective = 2.21 * uZoom / max(1.0, depth);
       vec2 screen = p.xy * perspective * vec2(uResolution.y / uResolution.x, 1.0) + uCenter;
       gl_Position = vec4(screen, 0.0, 1.0);
-      float size = aInfo.y * uDpr * (8.0 / max(2.0, depth)) * sqrt(uZoom);
+      float size = aInfo.y * uDpr * uPointScale * (8.0 / max(2.0, depth)) * sqrt(uZoom);
       if (uMode > 0.5) size *= kind > 0.5 && kind < 4.5 ? 0.8 : 0.62;
       gl_PointSize = clamp(size, 1.0, 48.0 * uDpr);
       float light = 0.7 + 0.3 * smoothstep(-2.2, 2.0, p.z);
@@ -485,6 +521,7 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
       this.burstValue = 0;
       this.staticHeart = false;
       this.heartHold = false;
+      this.letterPresentation = false;
       this.dragging = false;
       this.dpr = 1;
       this.raf = 0;
@@ -586,15 +623,30 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
       const max = this.gl.getParameter(this.gl.MAX_TEXTURE_SIZE);
       const width = Math.min(max, Math.max(1, Math.round(bounds.width * this.dpr)));
       const height = Math.min(max, Math.max(1, Math.round(bounds.height * this.dpr)));
-      this.canvas.width = width; this.canvas.height = height;
       const gl = this.gl;
-      for (const target of this.targets) { gl.deleteTexture(target.texture); gl.deleteFramebuffer(target.framebuffer); }
-      this.targets = [this.createTarget(width, height), this.createTarget(Math.max(1, Math.round(width / 4)), Math.max(1, Math.round(height / 4))), this.createTarget(Math.max(1, Math.round(width / 4)), Math.max(1, Math.round(height / 4)))];
+      if (this.canvas.width !== width || this.canvas.height !== height || !this.targets.length) {
+        // Reparenting also notifies ResizeObserver. Avoid clearing an already
+        // rendered, paused heart when that second notification has the same size.
+        this.canvas.width = width; this.canvas.height = height;
+        for (const target of this.targets) { gl.deleteTexture(target.texture); gl.deleteFramebuffer(target.framebuffer); }
+        this.targets = [this.createTarget(width, height), this.createTarget(Math.max(1, Math.round(width / 4)), Math.max(1, Math.round(height / 4))), this.createTarget(Math.max(1, Math.round(width / 4)), Math.max(1, Math.round(height / 4)))];
+      }
       this.center = this.mobile ? [0, -0.04] : [this.width <= 1100 ? 0.26 : 0.25, 0.035];
       this.sceneScale = this.mobile ? Math.min(0.65, this.width / this.height * 1.20) : 0.92;
       if (this.mobile && this.height <= 740) { this.sceneScale *= 0.9; this.center[1] = 0; }
       if (!this.mobile && window.innerHeight <= 500) { this.sceneScale = 0.82; this.center[1] = 0.12; }
+      if (this.letterPresentation) {
+        // Fit the actual particle heart into the mobile letter's visible stage.
+        // Reuse this canvas/context; no second renderer or decorative substitute.
+        this.center = [0, -0.025];
+        this.sceneScale = Math.min(1.5, (this.width / this.height) * 1.5);
+      }
       this.dirty = true;
+    }
+
+    setLetterPresentation(compact) {
+      this.letterPresentation = !!compact;
+      this.resize();
     }
 
     bindEvents() {
@@ -758,9 +810,10 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
       }
       gl.uniform1f(u.uTime, this.time);
       gl.uniform1f(u.uRotation, this.rotation);
-      gl.uniform1f(u.uPitch, this.pitch);
-      gl.uniform1f(u.uZoom, this.zoom * this.sceneScale);
+      gl.uniform1f(u.uPitch, this.letterPresentation ? 0 : this.pitch);
+      gl.uniform1f(u.uZoom, (this.letterPresentation ? 1 : this.zoom) * this.sceneScale);
       gl.uniform1f(u.uDpr, this.dpr);
+      gl.uniform1f(u.uPointScale, this.letterPresentation ? 0.46 : 1);
       gl.uniform1f(u.uFormation, this.formation);
       gl.uniform1f(u.uBurst, this.burstValue);
       gl.uniform1f(u.uHeart, this.heartValue);
@@ -798,7 +851,7 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
     }
 
     getState() {
-      return { ready: this.ready, contextLost: this.lost, points: this.geometry.count, paused: this.paused, reducedMotion: this.reducedMotion, palette: this.palette, mode: this.mode, rotation: this.rotation, zoom: this.zoom, formation: this.formation, heart: this.heartValue, burst: this.burstValue, width: this.width, height: this.height, dpr: this.dpr };
+      return { ready: this.ready, contextLost: this.lost, points: this.geometry.count, paused: this.paused, reducedMotion: this.reducedMotion, palette: this.palette, mode: this.mode, rotation: this.rotation, zoom: this.zoom, formation: this.formation, heart: this.heartValue, burst: this.burstValue, letterPresentation: this.letterPresentation, width: this.width, height: this.height, dpr: this.dpr };
     }
 
     destroy() {
@@ -1031,6 +1084,32 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
     dialog.returnFocus = trigger;
     dialog.showModal();
   }
+  const compactLetter = window.matchMedia('(max-width: 760px), (max-width: 1000px) and (max-height: 500px)');
+  const treeDescription = canvas.getAttribute('aria-label');
+  function updateLetterScrollCue() {
+    const paper = $('letter-paper');
+    $('letter-more-button').hidden = !($('letter-dialog').open && compactLetter.matches && paper.scrollHeight - paper.scrollTop - paper.clientHeight > 28);
+  }
+  function syncLetterPresentation() {
+    const compact = $('letter-dialog').open && compactLetter.matches;
+    const destination = compact ? $('letter-visual') : root;
+    if (canvas.parentElement !== destination) {
+      destination.insertBefore(canvas, compact ? destination.firstChild : root.querySelector('.grain'));
+      canvas.tabIndex = compact ? -1 : 0;
+      canvas.setAttribute('aria-label', compact ? '시은이를 향한 마음을 담은, 빛나는 입자 하트' : treeDescription);
+      scene?.setLetterPresentation(compact);
+    }
+    requestAnimationFrame(updateLetterScrollCue);
+  }
+  compactLetter.addEventListener('change', syncLetterPresentation);
+  const letterResizeObserver = new ResizeObserver(updateLetterScrollCue);
+  letterResizeObserver.observe($('letter-paper'));
+  $('letter-paper').addEventListener('scroll', updateLetterScrollCue, { passive: true });
+  $('letter-more-button').addEventListener('click', () => {
+    $('letter-paper').focus({ preventScroll: true });
+    $('letter-paper').scrollBy({ top: $('letter-paper').clientHeight * 0.65, behavior: motionPreference.matches ? 'instant' : 'smooth' });
+  });
+  document.fonts.ready.then(updateLetterScrollCue);
   document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => $(button.dataset.close).close()));
   document.querySelectorAll('dialog').forEach(dialog => {
     dialog.addEventListener('click', event => {
@@ -1046,10 +1125,13 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
     scene?.love(); audio?.chime();
     root.classList.add('letter-active');
     openDialog('letter-dialog', $('letter-button'));
+    $('letter-paper').scrollTop = 0;
+    syncLetterPresentation();
   });
   $('letter-dialog').addEventListener('close', () => {
     root.classList.remove('letter-active');
     scene?.endLove();
+    syncLetterPresentation();
   });
   $('wish-button').addEventListener('click', () => {
     $('letter-dialog').close();
@@ -1163,6 +1245,7 @@ dialog{border:1px solid #a999733d;background:#101a15;color:var(--white);width:44
   window.addEventListener('pagehide', event => {
     if (event.persisted) return;
     scene?.destroy(); audio?.destroy(); wishTimers.forEach(clearTimeout); clearTimeout(toastTimer);
+    letterResizeObserver.disconnect();
   });
   // Small read-only diagnostics for verifying real renderer and audio state.
   Object.defineProperty(window, 'noel', { value: Object.freeze({

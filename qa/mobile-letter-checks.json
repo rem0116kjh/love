@@ -1,0 +1,704 @@
+{
+  "url": "http://127.0.0.1:4173",
+  "environment": "Chromium mobile viewport/touch emulation on macOS; not a physical iOS/Android test.",
+  "checks": [
+    {
+      "name": "320x568: visible heart, legible letter, swipe, close and reopen",
+      "status": "pass",
+      "evidence": {
+        "state": {
+          "ready": true,
+          "contextLost": false,
+          "points": 30523,
+          "paused": false,
+          "reducedMotion": false,
+          "palette": 0,
+          "mode": 0,
+          "rotation": 0.5259934897214553,
+          "zoom": 1,
+          "formation": 1,
+          "heart": 0.9990509939414175,
+          "burst": 8.464781164328008e-24,
+          "letterPresentation": true,
+          "width": 292,
+          "height": 154,
+          "dpr": 1.75,
+          "audio": {
+            "enabled": false,
+            "state": "not-created"
+          },
+          "letterOpen": true,
+          "wishOpen": false,
+          "aboutOpen": false
+        },
+        "viewport": [
+          320,
+          568
+        ],
+        "dialog": {
+          "x": 14,
+          "y": 12,
+          "width": 292,
+          "height": 544,
+          "top": 12,
+          "right": 306,
+          "bottom": 556,
+          "left": 14
+        },
+        "stage": {
+          "x": 14,
+          "y": 12,
+          "width": 292,
+          "height": 154,
+          "top": 12,
+          "right": 306,
+          "bottom": 166,
+          "left": 14
+        },
+        "canvas": {
+          "x": 14,
+          "y": 12,
+          "width": 292,
+          "height": 154,
+          "top": 12,
+          "right": 306,
+          "bottom": 166,
+          "left": 14
+        },
+        "paper": {
+          "x": 14,
+          "y": 176,
+          "width": 292,
+          "height": 380,
+          "top": 176,
+          "right": 306,
+          "bottom": 556,
+          "left": 14
+        },
+        "close": {
+          "x": 261,
+          "y": 14,
+          "width": 44,
+          "height": 44,
+          "top": 14,
+          "right": 305,
+          "bottom": 58,
+          "left": 261
+        },
+        "font": 15,
+        "scroll": {
+          "top": 0,
+          "height": 598,
+          "client": 378,
+          "width": 290,
+          "clientWidth": 290
+        },
+        "canvasParent": "letter-visual",
+        "canvasCount": 1,
+        "moreVisible": true,
+        "glError": 0,
+        "brightPixels": 8542
+      }
+    },
+    {
+      "name": "360x640: visible heart, legible letter, swipe, close and reopen",
+      "status": "pass",
+      "evidence": {
+        "state": {
+          "ready": true,
+          "contextLost": false,
+          "points": 30523,
+          "paused": false,
+          "reducedMotion": false,
+          "palette": 0,
+          "mode": 0,
+          "rotation": 0.5294964997210239,
+          "zoom": 1,
+          "formation": 1,
+          "heart": 0.9990509939414175,
+          "burst": 8.464781164328008e-24,
+          "letterPresentation": true,
+          "width": 332,
+          "height": 154,
+          "dpr": 1.75,
+          "audio": {
+            "enabled": false,
+            "state": "not-created"
+          },
+          "letterOpen": true,
+          "wishOpen": false,
+          "aboutOpen": false
+        },
+        "viewport": [
+          360,
+          640
+        ],
+        "dialog": {
+          "x": 14,
+          "y": 12,
+          "width": 332,
+          "height": 616,
+          "top": 12,
+          "right": 346,
+          "bottom": 628,
+          "left": 14
+        },
+        "stage": {
+          "x": 14,
+          "y": 12,
+          "width": 332,
+          "height": 154,
+          "top": 12,
+          "right": 346,
+          "bottom": 166,
+          "left": 14
+        },
+        "canvas": {
+          "x": 14,
+          "y": 12,
+          "width": 332,
+          "height": 154,
+          "top": 12,
+          "right": 346,
+          "bottom": 166,
+          "left": 14
+        },
+        "paper": {
+          "x": 14,
+          "y": 176,
+          "width": 332,
+          "height": 452,
+          "top": 176,
+          "right": 346,
+          "bottom": 628,
+          "left": 14
+        },
+        "close": {
+          "x": 301,
+          "y": 14,
+          "width": 44,
+          "height": 44,
+          "top": 14,
+          "right": 345,
+          "bottom": 58,
+          "left": 301
+        },
+        "font": 15,
+        "scroll": {
+          "top": 0,
+          "height": 570,
+          "client": 450,
+          "width": 330,
+          "clientWidth": 330
+        },
+        "canvasParent": "letter-visual",
+        "canvasCount": 1,
+        "moreVisible": true,
+        "glError": 0,
+        "brightPixels": 8605
+      }
+    },
+    {
+      "name": "375x667: visible heart, legible letter, swipe, close and reopen",
+      "status": "pass",
+      "evidence": {
+        "state": {
+          "ready": true,
+          "contextLost": false,
+          "points": 30523,
+          "paused": false,
+          "reducedMotion": false,
+          "palette": 0,
+          "mode": 0,
+          "rotation": 0.5330034997210255,
+          "zoom": 1,
+          "formation": 1,
+          "heart": 0.9990509939414174,
+          "burst": 8.464781164328008e-24,
+          "letterPresentation": true,
+          "width": 347,
+          "height": 154,
+          "dpr": 1.75,
+          "audio": {
+            "enabled": false,
+            "state": "not-created"
+          },
+          "letterOpen": true,
+          "wishOpen": false,
+          "aboutOpen": false
+        },
+        "viewport": [
+          375,
+          667
+        ],
+        "dialog": {
+          "x": 14,
+          "y": 12,
+          "width": 347,
+          "height": 643,
+          "top": 12,
+          "right": 361,
+          "bottom": 655,
+          "left": 14
+        },
+        "stage": {
+          "x": 14,
+          "y": 12,
+          "width": 347,
+          "height": 154,
+          "top": 12,
+          "right": 361,
+          "bottom": 166,
+          "left": 14
+        },
+        "canvas": {
+          "x": 14,
+          "y": 12,
+          "width": 347,
+          "height": 154,
+          "top": 12,
+          "right": 361,
+          "bottom": 166,
+          "left": 14
+        },
+        "paper": {
+          "x": 14,
+          "y": 176,
+          "width": 347,
+          "height": 479,
+          "top": 176,
+          "right": 361,
+          "bottom": 655,
+          "left": 14
+        },
+        "close": {
+          "x": 316,
+          "y": 14,
+          "width": 44,
+          "height": 44,
+          "top": 14,
+          "right": 360,
+          "bottom": 58,
+          "left": 316
+        },
+        "font": 15,
+        "scroll": {
+          "top": 0,
+          "height": 570,
+          "client": 477,
+          "width": 345,
+          "clientWidth": 345
+        },
+        "canvasParent": "letter-visual",
+        "canvasCount": 1,
+        "moreVisible": true,
+        "glError": 0,
+        "brightPixels": 8538
+      }
+    },
+    {
+      "name": "390x844: visible heart, legible letter, swipe, close and reopen",
+      "status": "pass",
+      "evidence": {
+        "state": {
+          "ready": true,
+          "contextLost": false,
+          "points": 30523,
+          "paused": false,
+          "reducedMotion": false,
+          "palette": 0,
+          "mode": 0,
+          "rotation": 0.5312499997210269,
+          "zoom": 1,
+          "formation": 1,
+          "heart": 0.9990547558309036,
+          "burst": 8.464781164328008e-24,
+          "letterPresentation": true,
+          "width": 362,
+          "height": 185.671875,
+          "dpr": 1.75,
+          "audio": {
+            "enabled": false,
+            "state": "not-created"
+          },
+          "letterOpen": true,
+          "wishOpen": false,
+          "aboutOpen": false
+        },
+        "viewport": [
+          390,
+          844
+        ],
+        "dialog": {
+          "x": 14,
+          "y": 12,
+          "width": 362,
+          "height": 820,
+          "top": 12,
+          "right": 376,
+          "bottom": 832,
+          "left": 14
+        },
+        "stage": {
+          "x": 14,
+          "y": 12,
+          "width": 362,
+          "height": 185.671875,
+          "top": 12,
+          "right": 376,
+          "bottom": 197.671875,
+          "left": 14
+        },
+        "canvas": {
+          "x": 14,
+          "y": 12,
+          "width": 362,
+          "height": 185.671875,
+          "top": 12,
+          "right": 376,
+          "bottom": 197.671875,
+          "left": 14
+        },
+        "paper": {
+          "x": 14,
+          "y": 207.671875,
+          "width": 362,
+          "height": 624.328125,
+          "top": 207.671875,
+          "right": 376,
+          "bottom": 832,
+          "left": 14
+        },
+        "close": {
+          "x": 331,
+          "y": 14,
+          "width": 44,
+          "height": 44,
+          "top": 14,
+          "right": 375,
+          "bottom": 58,
+          "left": 331
+        },
+        "font": 15,
+        "scroll": {
+          "top": 0,
+          "height": 622,
+          "client": 622,
+          "width": 360,
+          "clientWidth": 360
+        },
+        "canvasParent": "letter-visual",
+        "canvasCount": 1,
+        "moreVisible": false,
+        "glError": 0,
+        "brightPixels": 11926
+      }
+    },
+    {
+      "name": "412x915: visible heart, legible letter, swipe, close and reopen",
+      "status": "pass",
+      "evidence": {
+        "state": {
+          "ready": true,
+          "contextLost": false,
+          "points": 30523,
+          "paused": false,
+          "reducedMotion": false,
+          "palette": 0,
+          "mode": 0,
+          "rotation": 0.5312499997210252,
+          "zoom": 1,
+          "formation": 1,
+          "heart": 0.9990509939414175,
+          "burst": 8.464781164328008e-24,
+          "letterPresentation": true,
+          "width": 384,
+          "height": 201.296875,
+          "dpr": 1.75,
+          "audio": {
+            "enabled": false,
+            "state": "not-created"
+          },
+          "letterOpen": true,
+          "wishOpen": false,
+          "aboutOpen": false
+        },
+        "viewport": [
+          412,
+          915
+        ],
+        "dialog": {
+          "x": 14,
+          "y": 12,
+          "width": 384,
+          "height": 891,
+          "top": 12,
+          "right": 398,
+          "bottom": 903,
+          "left": 14
+        },
+        "stage": {
+          "x": 14,
+          "y": 12,
+          "width": 384,
+          "height": 201.296875,
+          "top": 12,
+          "right": 398,
+          "bottom": 213.296875,
+          "left": 14
+        },
+        "canvas": {
+          "x": 14,
+          "y": 12,
+          "width": 384,
+          "height": 201.296875,
+          "top": 12,
+          "right": 398,
+          "bottom": 213.296875,
+          "left": 14
+        },
+        "paper": {
+          "x": 14,
+          "y": 223.296875,
+          "width": 384,
+          "height": 679.703125,
+          "top": 223.296875,
+          "right": 398,
+          "bottom": 903,
+          "left": 14
+        },
+        "close": {
+          "x": 353,
+          "y": 14,
+          "width": 44,
+          "height": 44,
+          "top": 14,
+          "right": 397,
+          "bottom": 58,
+          "left": 353
+        },
+        "font": 15,
+        "scroll": {
+          "top": 0,
+          "height": 678,
+          "client": 678,
+          "width": 382,
+          "clientWidth": 382
+        },
+        "canvasParent": "letter-visual",
+        "canvasCount": 1,
+        "moreVisible": false,
+        "glError": 0,
+        "brightPixels": 13587
+      }
+    },
+    {
+      "name": "430x932: visible heart, legible letter, swipe, close and reopen",
+      "status": "pass",
+      "evidence": {
+        "state": {
+          "ready": true,
+          "contextLost": false,
+          "points": 30523,
+          "paused": false,
+          "reducedMotion": false,
+          "palette": 0,
+          "mode": 0,
+          "rotation": 0.5277429997212424,
+          "zoom": 1,
+          "formation": 1,
+          "heart": 0.9990509939414174,
+          "burst": 8.464781164328008e-24,
+          "letterPresentation": true,
+          "width": 402,
+          "height": 205.03125,
+          "dpr": 1.75,
+          "audio": {
+            "enabled": false,
+            "state": "not-created"
+          },
+          "letterOpen": true,
+          "wishOpen": false,
+          "aboutOpen": false
+        },
+        "viewport": [
+          430,
+          932
+        ],
+        "dialog": {
+          "x": 14,
+          "y": 12,
+          "width": 402,
+          "height": 908,
+          "top": 12,
+          "right": 416,
+          "bottom": 920,
+          "left": 14
+        },
+        "stage": {
+          "x": 14,
+          "y": 12,
+          "width": 402,
+          "height": 205.03125,
+          "top": 12,
+          "right": 416,
+          "bottom": 217.03125,
+          "left": 14
+        },
+        "canvas": {
+          "x": 14,
+          "y": 12,
+          "width": 402,
+          "height": 205.03125,
+          "top": 12,
+          "right": 416,
+          "bottom": 217.03125,
+          "left": 14
+        },
+        "paper": {
+          "x": 14,
+          "y": 227.03125,
+          "width": 402,
+          "height": 692.96875,
+          "top": 227.03125,
+          "right": 416,
+          "bottom": 920,
+          "left": 14
+        },
+        "close": {
+          "x": 371,
+          "y": 14,
+          "width": 44,
+          "height": 44,
+          "top": 14,
+          "right": 415,
+          "bottom": 58,
+          "left": 371
+        },
+        "font": 15,
+        "scroll": {
+          "top": 0,
+          "height": 691,
+          "client": 691,
+          "width": 400,
+          "clientWidth": 400
+        },
+        "canvasParent": "letter-visual",
+        "canvasCount": 1,
+        "moreVisible": false,
+        "glError": 0,
+        "brightPixels": 13801
+      }
+    },
+    {
+      "name": "852x393: visible heart, legible letter, swipe, close and reopen",
+      "status": "pass",
+      "evidence": {
+        "state": {
+          "ready": true,
+          "contextLost": false,
+          "points": 30523,
+          "paused": false,
+          "reducedMotion": false,
+          "palette": 0,
+          "mode": 0,
+          "rotation": 0.5295069997223257,
+          "zoom": 1,
+          "formation": 1,
+          "heart": 0.9990547558309035,
+          "burst": 8.464781164328008e-24,
+          "letterPresentation": true,
+          "width": 358.21875,
+          "height": 369,
+          "dpr": 1.75,
+          "audio": {
+            "enabled": false,
+            "state": "not-created"
+          },
+          "letterOpen": true,
+          "wishOpen": false,
+          "aboutOpen": false
+        },
+        "viewport": [
+          852,
+          393
+        ],
+        "dialog": {
+          "x": 14,
+          "y": 12,
+          "width": 824,
+          "height": 369,
+          "top": 12,
+          "right": 838,
+          "bottom": 381,
+          "left": 14
+        },
+        "stage": {
+          "x": 14,
+          "y": 12,
+          "width": 358.21875,
+          "height": 369,
+          "top": 12,
+          "right": 372.21875,
+          "bottom": 381,
+          "left": 14
+        },
+        "canvas": {
+          "x": 14,
+          "y": 12,
+          "width": 358.21875,
+          "height": 369,
+          "top": 12,
+          "right": 372.21875,
+          "bottom": 381,
+          "left": 14
+        },
+        "paper": {
+          "x": 390.21875,
+          "y": 12,
+          "width": 447.78125,
+          "height": 369,
+          "top": 12,
+          "right": 838,
+          "bottom": 381,
+          "left": 390.21875
+        },
+        "close": {
+          "x": 788,
+          "y": 17,
+          "width": 44,
+          "height": 44,
+          "top": 17,
+          "right": 832,
+          "bottom": 61,
+          "left": 788
+        },
+        "font": 15,
+        "scroll": {
+          "top": 0,
+          "height": 569,
+          "client": 367,
+          "width": 446,
+          "clientWidth": 446
+        },
+        "canvasParent": "letter-visual",
+        "canvasCount": 1,
+        "moreVisible": true,
+        "glError": 0,
+        "brightPixels": 19134
+      }
+    },
+    {
+      "name": "Live orientation, desktop transition, and wish handoff",
+      "status": "pass",
+      "evidence": "The same canvas moves with the presentation; the wish dialog and normal scene recover correctly."
+    },
+    {
+      "name": "Reduced motion",
+      "status": "pass",
+      "evidence": "The compact heart renders without animation, and closing restores the static tree."
+    }
+  ],
+  "errors": [],
+  "status": "pass"
+}

@@ -167,7 +167,8 @@ try {
       check('Two-finger pinch', 'Real CDP touch events zoom the mobile tree.');
       await page.focus('#winter-canvas');
       for (let i=0;i<5;i++) await page.keyboard.press('-'); await delay(200);
-      await page.click('#letter-button'); await delay(300);
+      await page.click('#letter-button');
+      await page.waitForFunction(() => noel.getState().heart > 0.999);
       await page.screenshot({path:path.join(root, 'letter-mobile.png')}); await page.keyboard.press('Escape');
     }
   }

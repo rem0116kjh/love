@@ -10,3 +10,5 @@ qa/*.png
 !qa/mobile-small.png
 !qa/letter-desktop.png
 !qa/letter-mobile.png
+!qa/letter-mobile-small.png
+!qa/letter-landscape.png

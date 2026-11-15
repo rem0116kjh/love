@@ -159,7 +159,7 @@
     attribute vec3 aPosition;
     attribute vec3 aColor;
     attribute vec4 aInfo;
-    uniform float uTime, uRotation, uPitch, uZoom, uDpr, uFormation, uBurst, uHeart, uPalette;
+    uniform float uTime, uRotation, uPitch, uZoom, uDpr, uPointScale, uFormation, uBurst, uHeart, uPalette;
     uniform mediump float uMode;
     uniform vec2 uResolution, uCenter;
     varying vec3 vColor;
@@ -204,7 +204,7 @@
       float perspective = 2.21 * uZoom / max(1.0, depth);
       vec2 screen = p.xy * perspective * vec2(uResolution.y / uResolution.x, 1.0) + uCenter;
       gl_Position = vec4(screen, 0.0, 1.0);
-      float size = aInfo.y * uDpr * (8.0 / max(2.0, depth)) * sqrt(uZoom);
+      float size = aInfo.y * uDpr * uPointScale * (8.0 / max(2.0, depth)) * sqrt(uZoom);
       if (uMode > 0.5) size *= kind > 0.5 && kind < 4.5 ? 0.8 : 0.62;
       gl_PointSize = clamp(size, 1.0, 48.0 * uDpr);
       float light = 0.7 + 0.3 * smoothstep(-2.2, 2.0, p.z);
@@ -329,6 +329,7 @@
       this.burstValue = 0;
       this.staticHeart = false;
       this.heartHold = false;
+      this.letterPresentation = false;
       this.dragging = false;
       this.dpr = 1;
       this.raf = 0;
@@ -430,15 +431,30 @@
       const max = this.gl.getParameter(this.gl.MAX_TEXTURE_SIZE);
       const width = Math.min(max, Math.max(1, Math.round(bounds.width * this.dpr)));
       const height = Math.min(max, Math.max(1, Math.round(bounds.height * this.dpr)));
-      this.canvas.width = width; this.canvas.height = height;
       const gl = this.gl;
-      for (const target of this.targets) { gl.deleteTexture(target.texture); gl.deleteFramebuffer(target.framebuffer); }
-      this.targets = [this.createTarget(width, height), this.createTarget(Math.max(1, Math.round(width / 4)), Math.max(1, Math.round(height / 4))), this.createTarget(Math.max(1, Math.round(width / 4)), Math.max(1, Math.round(height / 4)))];
+      if (this.canvas.width !== width || this.canvas.height !== height || !this.targets.length) {
+        // Reparenting also notifies ResizeObserver. Avoid clearing an already
+        // rendered, paused heart when that second notification has the same size.
+        this.canvas.width = width; this.canvas.height = height;
+        for (const target of this.targets) { gl.deleteTexture(target.texture); gl.deleteFramebuffer(target.framebuffer); }
+        this.targets = [this.createTarget(width, height), this.createTarget(Math.max(1, Math.round(width / 4)), Math.max(1, Math.round(height / 4))), this.createTarget(Math.max(1, Math.round(width / 4)), Math.max(1, Math.round(height / 4)))];
+      }
       this.center = this.mobile ? [0, -0.04] : [this.width <= 1100 ? 0.26 : 0.25, 0.035];
       this.sceneScale = this.mobile ? Math.min(0.65, this.width / this.height * 1.20) : 0.92;
       if (this.mobile && this.height <= 740) { this.sceneScale *= 0.9; this.center[1] = 0; }
       if (!this.mobile && window.innerHeight <= 500) { this.sceneScale = 0.82; this.center[1] = 0.12; }
+      if (this.letterPresentation) {
+        // Fit the actual particle heart into the mobile letter's visible stage.
+        // Reuse this canvas/context; no second renderer or decorative substitute.
+        this.center = [0, -0.025];
+        this.sceneScale = Math.min(1.5, (this.width / this.height) * 1.5);
+      }
       this.dirty = true;
+    }
+
+    setLetterPresentation(compact) {
+      this.letterPresentation = !!compact;
+      this.resize();
     }
 
     bindEvents() {
@@ -602,9 +618,10 @@
       }
       gl.uniform1f(u.uTime, this.time);
       gl.uniform1f(u.uRotation, this.rotation);
-      gl.uniform1f(u.uPitch, this.pitch);
-      gl.uniform1f(u.uZoom, this.zoom * this.sceneScale);
+      gl.uniform1f(u.uPitch, this.letterPresentation ? 0 : this.pitch);
+      gl.uniform1f(u.uZoom, (this.letterPresentation ? 1 : this.zoom) * this.sceneScale);
       gl.uniform1f(u.uDpr, this.dpr);
+      gl.uniform1f(u.uPointScale, this.letterPresentation ? 0.46 : 1);
       gl.uniform1f(u.uFormation, this.formation);
       gl.uniform1f(u.uBurst, this.burstValue);
       gl.uniform1f(u.uHeart, this.heartValue);
@@ -642,7 +659,7 @@
     }
 
     getState() {
-      return { ready: this.ready, contextLost: this.lost, points: this.geometry.count, paused: this.paused, reducedMotion: this.reducedMotion, palette: this.palette, mode: this.mode, rotation: this.rotation, zoom: this.zoom, formation: this.formation, heart: this.heartValue, burst: this.burstValue, width: this.width, height: this.height, dpr: this.dpr };
+      return { ready: this.ready, contextLost: this.lost, points: this.geometry.count, paused: this.paused, reducedMotion: this.reducedMotion, palette: this.palette, mode: this.mode, rotation: this.rotation, zoom: this.zoom, formation: this.formation, heart: this.heartValue, burst: this.burstValue, letterPresentation: this.letterPresentation, width: this.width, height: this.height, dpr: this.dpr };
     }
 
     destroy() {

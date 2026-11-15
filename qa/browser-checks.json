@@ -11,11 +11,12 @@
         "reducedMotion": false,
         "palette": 0,
         "mode": 0,
-        "rotation": 0.4735057899152226,
+        "rotation": 0.44563168084787047,
         "zoom": 1,
-        "formation": 0.1601372549019607,
+        "formation": 0.1078439215686274,
         "heart": 0,
         "burst": 8.464781164328008e-24,
+        "letterPresentation": false,
         "width": 1440,
         "height": 900,
         "dpr": 1,
@@ -45,7 +46,7 @@
         "error": 0,
         "frames": 90,
         "averageMs": 16.666666666666668,
-        "p95Ms": 16.800000000000182
+        "p95Ms": 16.700000000000728
       }
     },
     {
@@ -182,6 +183,7 @@
     "http://127.0.0.1:4173/assets/cormorant-latin.woff2",
     "http://127.0.0.1:4173/assets/cormorant-italic-latin.woff2",
     "http://127.0.0.1:4173/assets/favicon.svg",
+    "http://127.0.0.1:4173/assets/favicon.svg",
     "http://127.0.0.1:4173/",
     "http://127.0.0.1:4173/styles.css",
     "http://127.0.0.1:4173/scene.js",
@@ -237,7 +239,7 @@
   "performance": {
     "frames": 90,
     "averageMs": 16.666666666666668,
-    "p95Ms": 16.800000000000182
+    "p95Ms": 16.700000000000728
   },
   "status": "pass"
 }

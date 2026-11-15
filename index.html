@@ -93,6 +93,10 @@
 
   <dialog class="letter-dialog" id="letter-dialog" aria-labelledby="letter-title">
     <button class="dialog-close icon-button" type="button" data-close="letter-dialog" aria-label="편지 닫기"><svg><use href="#i-close"/></svg></button>
+    <div class="letter-visual" id="letter-visual">
+      <span class="letter-visual-caption" aria-hidden="true">ALL MY HEART, JUST FOR YOU.</span>
+    </div>
+    <div class="letter-paper" id="letter-paper" tabindex="0" role="region" aria-label="시은이에게 보내는 편지 내용">
     <div class="letter-mark" aria-hidden="true">♡</div>
     <p class="eyebrow">TO MY DEAREST SI-EUN</p>
     <h2 id="letter-title">사랑하는 <em>시은이에게.</em></h2>
@@ -104,6 +108,8 @@
     </div>
     <div class="letter-signature"><span>언제나, 너를 생각하는 내가.</span><svg aria-hidden="true"><use href="#i-heart"/></svg></div>
     <button class="letter-wish-button" id="wish-button" type="button">우리의 소원도 하나 남겨 볼까? <svg><use href="#i-spark"/></svg></button>
+    </div>
+    <button class="letter-scroll-cue" id="letter-more-button" type="button" aria-label="편지 아래 내용으로 이동" hidden>이어서 읽기 <span aria-hidden="true">↓</span></button>
   </dialog>
 
   <dialog class="wish-dialog" id="wish-dialog" aria-labelledby="wish-title">
